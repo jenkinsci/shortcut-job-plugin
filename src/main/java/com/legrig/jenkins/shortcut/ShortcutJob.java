@@ -48,10 +48,10 @@ public class ShortcutJob extends AbstractItem implements TopLevelItem {
 
     private static final String ID = "shortcut-job";
 
-    private static final String ICON_16 = "plugin/" + ID + "/images/16x16/shortcutjob.png";
-    private static final String ICON_24 = "plugin/" + ID + "/images/24x24/shortcutjob.png";
-    private static final String ICON_32 = "plugin/" + ID + "/images/32x32/shortcutjob.png";
-    private static final String ICON_48 = "plugin/" + ID + "/images/48x48/shortcutjob.png";
+    private static final String ICON_16 = "plugin/" + ID + "/images/shortcutjob.svg";
+    private static final String ICON_24 = "plugin/" + ID + "/images/shortcutjob.svg";
+    private static final String ICON_32 = "plugin/" + ID + "/images/shortcutjob.svg";
+    private static final String ICON_48 = "plugin/" + ID + "/images/shortcutjob.svg";
 
     private static final Logger log = Logger.getLogger(ShortcutJob.class.getName());
 
