@@ -42,12 +42,12 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>structs</artifactId>
-      <version>315.vc32d6263e4df</version>
+      <version>308.v852b473a2b8c</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins.workflow</groupId>
       <artifactId>workflow-step-api</artifactId>
-      <version>625.v2e7cf5fc4211</version>
+      <version>622.vb_8e7c15b_c95a_</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -71,7 +71,7 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins.workflow</groupId>
       <artifactId>workflow-durable-task-step</artifactId>
-      <version>1159.va_968a_dfd1283</version>
+      <version>1121.va_65b_d2701486</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -83,7 +83,7 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>script-security</artifactId>
-      <version>1131.v8b_b_5eda_c328e</version>
+      <version>1138.v8e727069a_025</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -95,7 +95,7 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins.workflow</groupId>
       <artifactId>workflow-support</artifactId>
-      <version>815.vce765985340b_</version>
+      <version>813.vb_d7c3d2984a_0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
