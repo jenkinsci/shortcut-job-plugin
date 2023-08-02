@@ -47,6 +47,8 @@ Simply create a new item with type Shortcut - enter a name for it and URL, and y
 
 ## Changelog
 
+* 0.5 - Bugfixes
+  * Fix handling of URL
 * 0.4 - Stable version
 * 0.1 - Initial Version
 
