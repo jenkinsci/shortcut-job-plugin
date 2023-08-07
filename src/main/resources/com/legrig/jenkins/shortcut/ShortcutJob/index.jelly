@@ -8,7 +8,7 @@
 
   <j:choose>
     <j:when test="${it.redirect}">
-      <p>${%targetBlurb(it.targetUrl, it.redirectionUrl)}</p>
+     <p>${%targetBlurb} <a href="${it.redirectionUrl}">${it.targetUrl}</a></p>
       <st:redirect url="${it.redirectionUrl}"/>
     </j:when>
     <j:otherwise>
@@ -20,9 +20,7 @@
             <j:when test="${it.configured}">
               <h1><img width="24" height="24" style="margin: 2px;" alt="${%Shortcut}" src="${resURL}/${it.largeIcon}"/>
                   ${%Shortcut} ${it.name}</h1>
-              <p>
-                ${%targetBlurb(it.targetUrl, it.redirectionUrl)}
-              </p>
+              <p>${%targetBlurb} <a href="${it.redirectionUrl}">${it.targetUrl}</a></p>
             </j:when>
             <j:otherwise>
               <h1>${%Unconfigured shortcut} ${it.name}</h1>
