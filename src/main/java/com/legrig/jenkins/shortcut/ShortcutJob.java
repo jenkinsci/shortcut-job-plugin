@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.servlet.ServletException;
+import jakarta.servlet.ServletException;
 
 import org.apache.commons.lang.StringUtils;
 import org.jenkins.ui.icon.Icon;
@@ -22,8 +22,8 @@ import org.jvnet.localizer.LocaleProvider;
 import org.jvnet.localizer.Localizable;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.Stapler;
-import org.kohsuke.stapler.StaplerRequest;
-import org.kohsuke.stapler.StaplerResponse;
+import org.kohsuke.stapler.StaplerRequest2;
+import org.kohsuke.stapler.StaplerResponse2;
 import org.kohsuke.stapler.interceptor.RequirePOST;
 import org.kohsuke.stapler.verb.POST;
 
@@ -193,7 +193,7 @@ public class ShortcutJob extends AbstractItem implements TopLevelItem {
                     icon = ICON_48;
                     break;
             }
-            return Stapler.getCurrentRequest().getContextPath() + Jenkins.RESOURCE_PATH + "/" + icon;
+            return Stapler.getCurrentRequest2().getContextPath() + Jenkins.RESOURCE_PATH + "/" + icon;
         }
 
         @Override
@@ -212,7 +212,7 @@ public class ShortcutJob extends AbstractItem implements TopLevelItem {
     }
 
     @POST
-    public synchronized void doConfigSubmit(final StaplerRequest req, final StaplerResponse rsp)
+    public synchronized void doConfigSubmit(final StaplerRequest2 req, final StaplerResponse2 rsp)
             throws IOException, ServletException, Descriptor.FormException {
         this.checkPermission(ShortcutJob.CONFIGURE);
         try {
@@ -249,7 +249,7 @@ public class ShortcutJob extends AbstractItem implements TopLevelItem {
         }
     }
 
-    public void doLastBuild(final StaplerRequest req, final StaplerResponse rsp) throws IOException, ServletException {
+    public void doLastBuild(final StaplerRequest2 req, final StaplerResponse2 rsp) throws IOException, ServletException {
         if (rsp != null) {
             rsp.sendRedirect2(".");
         }
@@ -266,7 +266,7 @@ public class ShortcutJob extends AbstractItem implements TopLevelItem {
     }
 
     @RequirePOST
-    public void doDoRename(final StaplerRequest req, final StaplerResponse rsp) throws IOException, ServletException {
+    public void doDoRename(final StaplerRequest2 req, final StaplerResponse2 rsp) throws IOException, ServletException {
         this.checkPermission(ShortcutJob.CREATE);
         this.checkPermission(ShortcutJob.DELETE);
         final String newName = req.getParameter("newName");

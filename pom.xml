@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>4.36</version>
+    <version>5.7</version>
     <relativePath />
   </parent>
   <groupId>io.jenkins.plugins</groupId>
@@ -15,10 +15,11 @@
     <revision>0.6</revision>
     <changelist>-SNAPSHOT</changelist>
     <gitHubRepo>jenkinsci/shortcut-job-plugin</gitHubRepo>
+    <!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
+    <jenkins.baseline>2.479</jenkins.baseline>
     <!-- Baseline Jenkins version you use to build the plugin. Users must have
       this version or newer to run. -->
-    <jenkins.version>2.303.3</jenkins.version>
-    <java.level>8</java.level>
+    <jenkins.version>${jenkins.baseline}.1</jenkins.version>
     <!-- Other properties you may want to use: ~ jenkins-test-harness.version:
       Jenkins Test Harness version you use to test the plugin. For Jenkins version
       >= 1.580.1 use JTH 2.0 or higher. ~ hpi-plugin.version: The HPI Maven Plugin
@@ -30,6 +31,17 @@
   </properties>
   <name>Shortcut Job Plugin</name>
   <description>Allow creation of Jobs that are Shortcuts to other jobs or URLs</description>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.jenkins.tools.bom</groupId>
+        <artifactId>bom-${jenkins.baseline}.x</artifactId>
+        <version>4136.vca_c3202a_7fd1</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <!-- The default licence for Jenkins OSS Plugins is MIT. Substitute for
     the applicable one if needed. -->
   <licenses>
@@ -42,71 +54,53 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>structs</artifactId>
-      <version>308.v852b473a2b8c</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins.workflow</groupId>
       <artifactId>workflow-step-api</artifactId>
-      <version>622.vb_8e7c15b_c95a_</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins.workflow</groupId>
       <artifactId>workflow-cps</artifactId>
-      <version>2659.v52d3de6044d0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins.workflow</groupId>
       <artifactId>workflow-job</artifactId>
-      <version>1145.v7f2433caa07f</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins.workflow</groupId>
       <artifactId>workflow-basic-steps</artifactId>
-      <version>2.24</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins.workflow</groupId>
       <artifactId>workflow-durable-task-step</artifactId>
-      <version>1121.va_65b_d2701486</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>scm-api</artifactId>
-      <version>595.vd5a_df5eb_0e39</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>script-security</artifactId>
-      <version>1138.v8e727069a_025</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins.workflow</groupId>
       <artifactId>workflow-api</artifactId>
-      <version>1138.v619fd5201b_2f</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins.workflow</groupId>
       <artifactId>workflow-support</artifactId>
-      <version>813.vb_d7c3d2984a_0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <developers>
-    <developer>
-      <id>mlasevich</id>
-      <name>Michael Lasevich</name>
-      <email>mlasevich+jenkins@gmail.com</email>
-    </developer>
-  </developers>
 
   <!-- Assuming you want to host on @jenkinsci: <url>https://wiki.jenkins.io/display/JENKINS/TODO+Plugin</url> -->
     <scm>
